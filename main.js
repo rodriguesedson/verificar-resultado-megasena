@@ -60,7 +60,7 @@ function verifyResult(bets) {
 
     for (let i = 0; i < bets.length; i++) {
         for (let j = 0; j < bets[i].length; j++) {
-            if (bets[i][j] === result[x]) {
+            if (bets[i][j] === result[j]) {
                 sum++;
             }
         }
