@@ -60,14 +60,12 @@ function verifyResult(bets) {
 
     for (let i = 0; i < bets.length; i++) {
         for (let j = 0; j < bets[i].length; j++) {
-            for (let x = 0; x < result.length; x++) {
-                if (bets[i][j] === result[x]) {
-                    sum++;
-                }
+            if (bets[i][j] === result[x]) {
+                sum++;
             }
-            allSum.push(sum);
-            sum = 0;
         }
+        allSum.push(sum);
+        sum = 0;
     }
     
     for(let i = 0; i < allSum.length; i++) {
