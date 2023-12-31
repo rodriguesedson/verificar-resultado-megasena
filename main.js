@@ -68,7 +68,8 @@ function verificaResultado(apostas) {
         soma = 0;
     }
     
-    return somas;
+    for(let i = 0; i < somas.length; i++) {
+        console.log(i + 1, somas[i]);
+    }
 }
-
-console.log(verificaResultado(apostas));
+verificaResultado(apostas);
