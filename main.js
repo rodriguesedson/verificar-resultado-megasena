@@ -25,7 +25,7 @@
     24 [27, 34, 41, 49, 57, 60]
 */
 
-let apostas = [
+let bets = [
     [6, 10, 32, 44, 52, 59],
     [5, 9, 19, 34, 48, 52],
     [8, 18, 19, 24, 25, 40],
@@ -52,24 +52,26 @@ let apostas = [
     [27, 34, 41, 49, 57, 60]
 ]
 
-const resultado = [2, 11, 24, 32, 42, 59];
+const result = [2, 11, 24, 32, 42, 59];
 
-function verificaResultado(apostas) {
-    let soma = 0;
-    let somas = [];
+function verifyResult(bets) {
+    let sum = 0;
+    let allSum = [];
 
-    for (let i = 0; i < apostas.length; i++) {
-        for (let j = 0; j < apostas[i].length; j++) {
-            if (apostas[i][j] === resultado[j]) {
-                soma++;
+    for (let i = 0; i < bets.length; i++) {
+        for (let j = 0; j < bets[i].length; j++) {
+            for (let x = 0; x < result.length; x++) {
+                if (bets[i][j] === result[x]) {
+                    sum++;
+                }
             }
+            allSum.push(sum);
+            sum = 0;
         }
-        somas.push(soma);
-        soma = 0;
     }
     
-    for(let i = 0; i < somas.length; i++) {
-        console.log(i + 1, somas[i]);
+    for(let i = 0; i < allSum.length; i++) {
+        console.log(i + 1, allSum[i]);
     }
 }
-verificaResultado(apostas);
+verifyResult(bets);
